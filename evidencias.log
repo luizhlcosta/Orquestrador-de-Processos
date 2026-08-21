@@ -1,0 +1,308 @@
+EVIDENCIAS DE TESTES - PROCESSFLOW
+====================================================
+Preencher este arquivo conforme cada funcionalidade for testada.
+Usar como base para montar o relatorio em PDF exigido pela disciplina.
+====================================================
+
+
+==================================================
+TESTE 1: Execucao simples de tarefa + exit
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 2: Execucao sequencial (run sequential)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 3: Execucao paralela (run parallel)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+(lembrar de observar/testar tambem processos paralelos terminando em ordens diferentes)
+
+==================================================
+
+
+==================================================
+TESTE 4: Pipe entre tarefas (run pipe)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 5: Redirecionamento de entrada (input)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 6: Redirecionamento de saida (output)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 7: Redirecionamento de saida em modo append (append)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 8: Diretorio de trabalho (workdir)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+(testar tambem workdir com diretorio inexistente - deve dar erro e continuar)
+
+==================================================
+
+
+==================================================
+TESTE 9: Execucao em background (start)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA (incluir job ID e PID informados):
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 10: Listagem de jobs (jobs)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+
+
+==================================================
+
+
+==================================================
+TESTE 11: Espera de job especifico (wait)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+(testar tambem wait com jobId inexistente - deve dar erro e continuar)
+
+==================================================
+
+
+==================================================
+TESTE 12: Modo workflow (arquivo .pf)
+DATA: 
+--------------------------------------------------
+COMANDO(S) EXECUTADO(S):
+(lembrar: cada linha lida do arquivo deve ser impressa antes de ser processada)
+
+SAIDA OBTIDA:
+
+
+RESULTADO ESPERADO:
+
+
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES:
+(testar tambem workflowFile sem o comando exit)
+(testar tambem workflowFile inexistente ou que nao pode ser aberto - deve encerrar)
+
+==================================================
+
+
+==================================================
+TESTE 13: Tratamento de erros e situacoes especiais
+DATA: 
+--------------------------------------------------
+SUBCASO A - Numero incorreto de argumentos ao iniciar o ProcessFlow:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO B - Tarefa informada nao existe:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO C - Programa da tarefa nao existe / nao pode ser executado:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO D - Arquivo de entrada/saida nao pode ser aberto:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO E - Linha de comando vazia no prompt:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO F - Multiplos espacos em branco em uma linha:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO G - CTRL-D no modo interativo:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+SUBCASO H - Processo termina com codigo de saida diferente de zero:
+COMANDO:
+SAIDA OBTIDA:
+STATUS: [ PENDENTE / OK / FALHOU ]
+
+OBSERVACOES GERAIS:
+
+
+==================================================
