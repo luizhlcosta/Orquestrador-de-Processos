@@ -105,6 +105,48 @@ void executar_tarefa(int indice) {
     }
 }
 
+void executar_sequential(char *nomes_tarefas[], int qtd) {
+    for (int i = 0; i < qtd; i++) {
+        int indice = buscar_tarefa(nomes_tarefas[i]);
+        if (indice == -1) {
+            printf("tarefa nao encontrada: %s\n", nomes_tarefas[i]);
+            continue;
+        }
+        executar_tarefa(indice);
+    }
+}
+
+void executar_paralelo(char *nomes_tarefas[], int qtd) {
+    pid_t pids[qtd];
+    int qtd_pids = 0;
+
+    for (int i = 0; i < qtd; i++) {
+        int indice = buscar_tarefa(nomes_tarefas[i]);
+        if (indice == -1) {
+            printf("tarefa nao encontrada: %s\n", nomes_tarefas[i]);
+            continue;
+        }
+        pid_t pid = fork();
+
+        if (pid == 0) {
+            execvp(tarefas[indice].argv[0], tarefas[indice].argv);
+            perror("erro ao executar");
+            exit(1);
+        } else if (pid > 0) {
+            pids[qtd_pids] = pid;
+            qtd_pids++;
+        } else {
+            perror("erro no fork");
+        }
+    }
+
+    for (int i = 0; i < qtd_pids; i++) {
+        int status;
+        waitpid(pids[i], &status, 0);
+    }
+}
+
+
 int main() {
     char entrada[MAX_LINE];
     char *tokens[MAX_TOKENS];
@@ -134,19 +176,20 @@ int main() {
 
         } else if (strcmp(tokens[0], "run") == 0) {
 
-            if (qtd_tokens < 2) {
-                printf("uso: run <tarefa>\n");
+            if (qtd_tokens < 3) {
+                printf("uso: run <sequential|parallel> <tarefas...>\n");
                 continue;
             }
 
-            int indice = buscar_tarefa(tokens[1]);
+            int qtd_nomes = qtd_tokens - 2;
 
-            if (indice == -1) {
-                printf("tarefa '%s' nao encontrada\n", tokens[1]);
-                continue;
+            if (strcmp(tokens[1], "sequential") == 0) {
+                executar_sequential(&tokens[2], qtd_nomes);
+            } else if (strcmp(tokens[1], "parallel") == 0) {
+                executar_paralelo(&tokens[2], qtd_nomes);
+            } else {
+                printf("modo invalido: use sequential ou parallel\n");
             }
-
-            executar_tarefa(indice);
 
         } else if (strcmp(tokens[0], "exit") == 0) {
 
