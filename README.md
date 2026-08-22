@@ -18,8 +18,8 @@ background (start/jobs/wait).
 ## Status de implementação
 
 - [x] Execução simples (task/run) + exit
-- [ ] Execução sequencial (run sequential)
-- [ ] Execução paralela (run parallel)
+- [x] Execução sequencial (run sequential)
+- [x] Execução paralela (run parallel)
 - [ ] Pipe entre tarefas (run pipe)
 - [ ] Redirecionamento de entrada (input)
 - [ ] Redirecionamento de saída (output)
