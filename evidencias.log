@@ -145,7 +145,8 @@ erro ao executar: No such file or directory
 processflow> exit
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/OrquestradScript started on 2026-08-22 10:51:01-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="148" LINES="11"]
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
-[?2004lprocessflow> takst     ksta      skt    t1 /bin/echo hello
+[?2004l
+processflow> takst     ksta      skt    t1 /bin/echo hello
 tarefa 't1' cadastrada
 processflow> run  t  t1
 hello
@@ -157,19 +158,26 @@ processflow> run t2
 erro ao executar: No such file or directory
 processflow> exit
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== FIM DOS TESTES ETAPA 3 ==="[27m
-[7mexit[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM DOS TESTES ETAPA 3 ==="
-exit
-[?2004l=== FIM DOS TESTES ETAPA 3 ===
+
+[7mexit[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM DOS TESTES ETAPA 3 ==="
+
+exit
+[?2004l
+=== FIM DOS TESTES ETAPA 3 ===
 exit
 
 Script done on 2026-08-22 10:52:50-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-08-22 15:48:37-03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="214" LINES="27"]
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== ETAPA 4: RUN SEQUENTIAL/PARALLEL ==="[27mecho "=== ETAPA 4: RUN SEQUENTIAL/PARALLEL ==="
-[?2004l=== ETAPA 4: RUN SEQUENTIAL/PARALLEL ===
+[?2004l
+=== ETAPA 4: RUN SEQUENTIAL/PARALLEL ===
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "Data do teste: $(date)"[27mecho "Data do teste: $(date)" [K
-[?2004lData do teste: Sat Aug 22 15:49:01 -03 2026
+[?2004l
+Data do teste: Sat Aug 22 15:49:01 -03 2026
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mgcc -Wall -Wextra -o processflow processflow.c[27mgcc -Wall -Wextra -o processflow processflow.c
-[?2004l[01m[Kprocessflow.c:[m[K In function ‘[01m[Kexecutar_sequential[m[K’:
+[?2004l
+[01m[Kprocessflow.c:[m[K In function ‘[01m[Kexecutar_sequential[m[K’:
 [01m[Kprocessflow.c:112:46:[m[K [01;31m[Kerror: [m[Kinvalid operands to binary + (have ‘[01m[Kchar *[m[K’ and ‘[01m[Kchar *[m[K’)
   112 |             printf([32m[K"tarefa nao encontrada: "[m[K [01;31m[K+[m[K [34m[Knomes_tarefas[i][m[K);
       |                    [32m[K~~~~~~~~~~~~~~~~~~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~~~~~~~~[m[K
@@ -198,14 +206,20 @@ In file included from [01m[Kprocessflow.c:3[m[K:
       |                                                 [32m[Kqtd_tokens[m[K
 [01m[Kprocessflow.c:185:49:[m[K [01;36m[Knote: [m[Keach undeclared identifier is reported only once for each function it appears in
 [?2004h]0;luizhlcoScript started on 2026-08-22 16:22:34-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="26"]
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo [K[K[K[K[K[7mecho "=== ETAPA 4: RUN [27m[7mS[27m[7mEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="
-[?2004l=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ===
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo [K[K[K[K[K[7mecho "Data do teste: $([27m[7md[27m[7mate)"[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
-[?2004lData do teste: Sat Aug 22 16:23:01 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo [K[K[K[K[K[7mecho "=== ETAPA 4: RUN [27m[7mS[27m[7mEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="
+[?2004l
+=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo [K[K[K[K[K[7mecho "Data do teste: $([27m[7md[27m[7mate)"[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
+[?2004l
+Data do teste: Sat Aug 22 16:23:01 -03 2026
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ .[Kmake
-[?2004lmake: Nothing to be done for 'all'.
+[?2004l
+make: Nothing to be done for 'all'.
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./p[K [Kprocessflow
-[?2004lprocessflow> task lente a bin;sl   /slp eep 2
+[?2004l
+processflow> task lente a bin;sl   /slp eep 2
 tarefa 'lenta' cadastrada
 processflow> taks    sk lenta2 bin/sleep 8
 tarefa 'lenta2' cadastrada
@@ -217,16 +231,55 @@ erro ao executar: No such file or directory
 erro ao executar: No such file or directory
 processflow> exit
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./process [Kflow
-[?2004lprocessflow> task lenta /bin/sleep 2
+[?2004l
+processflow> task lenta /bin/sleep 2
 tarefa 'lenta' cadastrada
 processflow> task lenta2 /bin/sleep 2
 tarefa 'lenta2' cadastrada
 processflow> run sequential lenta lenta2
 processflow> run parallel lenta lenta2
 processflow> exit  
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo[K[K[K[K[7mecho "=== FIM DA VALIDA[27m[7mC[27m[7mAO ETAPA 4 ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM DA VALIDACAO ETAPA 4 ==="
-[?2004l=== FIM DA VALIDACAO ETAPA 4 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo[K[K[K[K[7mecho "=== FIM DA VALIDA[27m[7mC[27m[7mAO ETAPA 4 ==="[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM DA VALIDACAO ETAPA 4 ==="
+[?2004l
+=== FIM DA VALIDACAO ETAPA 4 ===
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-08-22 16:25:24-03:00 [COMMAND_EXIT_CODE="0"]
+
+Script started on 2026-08-22 16:02:11-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="26"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo[K[K[K[K[7mecho "=== ETAPA 4: RUN [27m[7mS[27m[7mEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ==="
+[?2004l
+=== ETAPA 4: RUN SEQUENTIAL/PARALLEL - VALIDACAO FINAL ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste [K: $( 
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C( 
+date [K)"
+[?2004l
+Data do teste: Sat Aug 22 16:02:46 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
+[?2004l
+processflow> task lenta /bind /sleep/    2  
+tarefa 'lenta' cadastrada
+processflow> te ask lenta  2 /b bin/sleep 2
+tarefa 'lenta2' cadastrada
+processflow> run sequential lena ta  1    lenta2
+tarefa 'sequential' nao encontrada
+processflow> run parallel lenta lenta2
+tarefa 'parallel' nao encontrada
+processflow> exit
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
+[?2004l
+processflow> taks    sk lenta  1 /bin/slp eep 2
+tarefa 'lenta1' cadastrada
+processflow> taks    sk lenta 2    2 /bin/slp eep 2
+tarefa 'lenta2' cadastrada
+processflow> run sequentia  l lenta  1 lena ta 2  2
+tarefa 'sequential' nao encontrada
+processflow> run parallel lena ta 1    1 lenta  2
+tarefa 'parallel' nao encontrada
+processflow> [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mgcc -Wall -Wextra -o pr[27m[7mo[27m[7mcessflow processflow.c
