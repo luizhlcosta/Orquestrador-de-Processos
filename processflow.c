@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
 #define MAX_TOKENS 64
@@ -30,10 +32,12 @@ void cadastrar_tarefa(char *tokens[], int qtd_tokens) {
         tarefas[total_tarefas].nome[MAX_NOME - 1] = '\0';
 
         int i = 0;
+
         while ((2 + i) < qtd_tokens && i < (MAX_ARGS - 1)) {
             tarefas[total_tarefas].argv[i] = strdup(tokens[2 + i]);
             i++;
         }
+
         tarefas[total_tarefas].argv[i] = NULL;
 
         printf("tarefa '%s' cadastrada\n", tarefas[total_tarefas].nome);
@@ -48,6 +52,7 @@ int buscar_tarefa(char *nome) {
             return i;
         }
     }
+
     return -1;
 }
 
@@ -78,6 +83,28 @@ int linha_em_branco(char *linha) {
     return 1;
 }
 
+void executar_tarefa(int indice) {
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        execvp(
+            tarefas[indice].argv[0],
+            tarefas[indice].argv
+        );
+
+        perror("erro ao executar");
+        exit(1);
+
+    } else if (pid > 0) {
+        int status;
+
+        waitpid(pid, &status, 0);
+
+    } else {
+        perror("erro no fork");
+    }
+}
+
 int main() {
     char entrada[MAX_LINE];
     char *tokens[MAX_TOKENS];
@@ -102,10 +129,31 @@ int main() {
         }
 
         if (strcmp(tokens[0], "task") == 0) {
+
             cadastrar_tarefa(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "run") == 0) {
+
+            if (qtd_tokens < 2) {
+                printf("uso: run <tarefa>\n");
+                continue;
+            }
+
+            int indice = buscar_tarefa(tokens[1]);
+
+            if (indice == -1) {
+                printf("tarefa '%s' nao encontrada\n", tokens[1]);
+                continue;
+            }
+
+            executar_tarefa(indice);
+
         } else if (strcmp(tokens[0], "exit") == 0) {
+
             break;
+
         } else {
+
             for (int i = 0; i < qtd_tokens; i++) {
                 printf("token[%d] = %s\n", i, tokens[i]);
             }
