@@ -274,6 +274,20 @@ void executar_pipe(char *nomes_tarefas[], int qtd) {
     }
 }
 
+void cmd_workdir(char *tokens[], int qtd_tokens) {
+    if (qtd_tokens < 2) {
+        printf("uso: workdir <diretorio>");
+        return;
+    }
+
+    if (chdir(tokens[1]) != 0) {
+        perror("erro ao mudar diretorio");
+        return;
+    }
+
+    printf("diretorio de trabalho alterado para: %s\n", tokens[1]);
+}
+
 
 int main() {
     char entrada[MAX_LINE];
@@ -313,6 +327,10 @@ int main() {
         } else if (strcmp(tokens[0], "append") == 0) {
 
             cmd_append(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "workdir") == 0) {
+
+            cmd_workdir(tokens, qtd_tokens);
 
         } else if (strcmp(tokens[0], "run") == 0) {
 
