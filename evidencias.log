@@ -307,9 +307,11 @@ Script done on 2026-08-22 20:51:06-03:00 [COMMAND_EXIT_CODE="130"]
 Script started on 2026-08-22 20:52:42-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="49" LINES="9"]
 Script started on 2026-08-22 21:35:16-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="17"]
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./process
-[?2004lbash: ./process: No such file or directory
+[?2004l
+bash: ./process: No such file or directory
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
-[?2004lprocessflow> task listar /bin/ls
+[?2004l
+processflow> task listar /bin/ls
 tarefa 'listar' cadastrada
 processflow> task ordenar /usr  /bin  /sort  
 tarefa 'ordenar' cadastrada
@@ -322,18 +324,25 @@ processflow> run pipe listar ordenar ca ontar  
 5
 processflow> exit 
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-08-22 21:37:05-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-08-23 00:48:48-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="17"]
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== ETAPA 6: REDI[27m[7mR[27m[7mECIONAMENTO (input/output/append) ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ==="
-[?2004l=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ===
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "Data do teste: $([27m[7md[27m[7mate)"[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
-[?2004lData do teste: Sun Aug 23 00:49:11 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== ETAPA 6: REDI[27m[7mR[27m[7mECIONAMENTO (input/output/append) ==="[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ==="
+[?2004l
+=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "Data do teste: $([27m[7md[27m[7mate)"[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
+[?2004l
+Data do teste: Sun Aug 23 00:49:11 -03 2026
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ make
-[?2004lmake: Nothing to be done for 'all'.
+[?2004l
+make: Nothing to be done for 'all'.
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
-[?2004lprocessflow> task escrever /bin/echo linha1
+[?2004l
+processflow> task escrever /bin/echo linha1
 tarefa 'escrever' cadastrada
 processflow> v output escrever saida.txt
 processflow> run sequential escrever
@@ -354,26 +363,37 @@ processflow> run sequential ordenar
 linha1
 linha2
 processflow> exit
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== FIM TESTE ETA[27m[7mP[27m[7mA 6 ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE ETAPA 6 ==="
-[?2004l=== FIM TESTE ETAPA 6 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== FIM TESTE ETA[27m[7mP[27m[7mA 6 ==="[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE ETAPA 6 ==="
+[?2004l
+=== FIM TESTE ETAPA 6 ===
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-08-23 00:51:05-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-08-23 11:38:01-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="97" LINES="17"]
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ escho [K[K[K[K[Kcho "=== ETAPA 7: WORK DIR [K ==="
-[?2004l=== ETAPA 7: WORKDIR ===
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "data[K[K[K[KDAta[K[K[Kata do teste: $( date)"
-[?2004lData do teste: Sun Aug 23 11:38:52 -03 2026
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ t[K[7mtask onde_estou /bin/pw[27m[7md[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ task onde_estou /bin/pwd
-[?2004lCommand 'task' not found, but can be installed with:
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ escho [K[K[K[K[Kcho "=== ETAPA 7: WORK 
+DIR [K ==="
+[?2004l
+=== ETAPA 7: WORKDIR ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "data[K[K[K[KDAta[K[K[Kata do teste: $( 
+date)"
+[?2004l
+Data do teste: Sun Aug 23 11:38:52 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ t[K[7mtask onde_estou /bin/pw[27m[7md[27m[A
+]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ task onde_estou /bin/pwd
+[?2004l
+Command 'task' not found, but can be installed with:
 sudo snap install task         # version v3.51.1, or
 sudo apt  install taskwarrior  # version 2.6.2+dfsg-1
 See 'snap info task' for additional versions.
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./s[Kprocc[Kesseflow
-[?2004lbash: ./processeflow: No such file or directory
+[?2004l
+bash: ./processeflow: No such file or directory
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./process [Kflow
-[?2004lprocessflow> task onde_estou /bin/pwd
+[?2004l
+processflow> task onde_estou /bin/pwd
 tarefa 'onde_estou' cadastrada
 processflow> run sequential onde_estou
 /mnt/c/Users/luizh/Orquestrador-de-Processos
@@ -386,9 +406,36 @@ erro ao mudar diretorio: No such file or directory
 processflow> run sequential onde_estou
 /tmp
 processflow> exit
-[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE EA[KTA PA 7 ==="
-[?2004l=== FIM TESTE ETAPA 7 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE EA[KTA 
+PA 7 ==="
+[?2004l
+=== FIM TESTE ETAPA 7 ===
 [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ECIT[K[K[K[Kexit [K
+[?2004l
+exit
+
+Script started on 2026-08-23 17:25:40-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="96" LINES="17"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== ETAPA 8: BAC[27m[7mK[27m[7mGROUND - TESTE COMPLETO ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 8: BACKGROUND - TESTE COMPLETO ==="
+[?2004l=== ETAPA 8: BACKGROUND - TESTE COMPLETO ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "Data do teste: $[27m[7m([27m[7mdate)"[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
+[?2004lData do teste: Sun Aug 23 17:25:54 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7m./processflow[27m./processflow
+[?2004lprocessflow> task demorada /bin/sleep 10
+tarefa 'demorada' cadastrada
+processflow> start demoa rada
+[1] 638
+processflow> jobs
+[1] 638 demorada Running
+processflow> wait 1
+job 1 finalizado
+processflow> jobs
+[1] 638 demorada Done
+processflow> wait 99
+job nao encontrado: 99
+processflow> eixt   xit
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== FIM TESTE ET[27m[7mA[27m[7mPA 8 ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE ETAPA 8 ==="
+[?2004l=== FIM TESTE ETAPA 8 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
 [?2004lexit
 
-Script done on 2026-08-23 11:40:20-03:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-23 17:26:56-03:00 [COMMAND_EXIT_CODE="0"]
