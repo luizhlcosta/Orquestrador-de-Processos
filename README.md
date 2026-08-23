@@ -20,7 +20,7 @@ background (start/jobs/wait).
 - [x] Execução simples (task/run) + exit
 - [x] Execução sequencial (run sequential)
 - [x] Execução paralela (run parallel)
-- [ ] Pipe entre tarefas (run pipe)
+- [x] Pipe entre tarefas (run pipe)
 - [ ] Redirecionamento de entrada (input)
 - [ ] Redirecionamento de saída (output)
 - [ ] Redirecionamento de saída em modo append (append)
