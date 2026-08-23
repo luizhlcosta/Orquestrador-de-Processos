@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 #define MAX_TOKENS 64
 #define MAX_LINE 1024
@@ -15,6 +16,9 @@
 typedef struct {
     char nome[MAX_NOME];
     char *argv[MAX_ARGS];
+    char *input_file;
+    char *output_file;
+    int append;
 } Tarefa;
 
 Tarefa tarefas[MAX_TAREFAS];
@@ -40,6 +44,10 @@ void cadastrar_tarefa(char *tokens[], int qtd_tokens) {
 
         tarefas[total_tarefas].argv[i] = NULL;
 
+        tarefas[total_tarefas].input_file = NULL;
+        tarefas[total_tarefas].output_file = NULL;
+        tarefas[total_tarefas].append = 0;
+
         printf("tarefa '%s' cadastrada\n", tarefas[total_tarefas].nome);
 
         total_tarefas++;
@@ -54,6 +62,47 @@ int buscar_tarefa(char *nome) {
     }
 
     return -1;
+}
+
+void cmd_input(char *tokens[], int qtd_tokens) {
+    if (qtd_tokens < 3) {
+        printf("uso: input <tarefa> <arquivo>\n");
+        return;
+    }
+    int indice = buscar_tarefa(tokens[1]);
+    if (indice == -1) {
+        printf("tarefa nao encontrada: %s\n", tokens[1]);
+        return;
+    }
+    tarefas[indice].input_file = strdup(tokens[2]);
+}
+
+void cmd_output(char *tokens[], int qtd_tokens) {
+    if (qtd_tokens < 3) {
+        printf("uso: output <tarefa> <arquivo>\n");
+        return;
+    }
+    int indice = buscar_tarefa(tokens[1]);
+    if (indice == -1) {
+        printf("tarefa nao encontrada: %s\n", tokens[1]);
+        return;
+    }
+    tarefas[indice].output_file = strdup(tokens[2]);
+    tarefas[indice].append = 0;
+}
+
+void cmd_append(char *tokens[], int qtd_tokens) {
+    if (qtd_tokens < 3) {
+        printf("uso: append <tarefa> <arquivo>\n");
+        return;
+    }
+    int indice = buscar_tarefa(tokens[1]);
+    if (indice == -1) {
+        printf("tarefa nao encontrada: %s\n", tokens[1]);
+        return;
+    }
+    tarefas[indice].output_file = strdup(tokens[2]);
+    tarefas[indice].append = 1;
 }
 
 int tokenizar(char *linha, char *tokens[]) {
@@ -87,6 +136,33 @@ void executar_tarefa(int indice) {
     pid_t pid = fork();
 
     if (pid == 0) {
+        if (tarefas[indice].input_file != NULL) {
+            int fd = open(tarefas[indice].input_file, O_RDONLY);
+            if (fd < 0) {
+                perror("erro ao abrir arquivo de entrada");
+                exit(1);
+            }
+            dup2(fd, STDIN_FILENO);
+            close(fd);
+        }
+
+        if (tarefas[indice].output_file != NULL) {
+            int flags;
+            if (tarefas[indice].append == 1) {
+                flags = O_WRONLY | O_CREAT | O_APPEND;
+            } else {
+                flags = O_WRONLY | O_CREAT | O_TRUNC;
+            }
+
+            int fd = open(tarefas[indice].output_file, flags, 0644);
+            if (fd < 0) {
+                perror("erro ao abrir arquivo de saida");
+                exit(1);
+            }
+            dup2(fd, STDOUT_FILENO);
+            close(fd);
+        }
+
         execvp(
             tarefas[indice].argv[0],
             tarefas[indice].argv
@@ -147,17 +223,17 @@ void executar_paralelo(char *nomes_tarefas[], int qtd) {
 }
 
 void executar_pipe(char *nomes_tarefas[], int qtd) {
-    int pipes[qtd -1][2];
+    int pipes[qtd - 1][2];
 
-    for(int i = 0; i < qtd - 1; i++) {
+    for (int i = 0; i < qtd - 1; i++) {
         pipe(pipes[i]);
     }
     pid_t pids[qtd];
 
-    for(int i = 0; i < qtd; i++) {
+    for (int i = 0; i < qtd; i++) {
         int indice = buscar_tarefa(nomes_tarefas[i]);
         if (indice == -1) {
-            perror("erro");
+            printf("tarefa nao encontrada: %s\n", nomes_tarefas[i]);
             continue;
         }
         pid_t pid = fork();
@@ -172,7 +248,7 @@ void executar_pipe(char *nomes_tarefas[], int qtd) {
                 dup2(pipes[i][1], STDOUT_FILENO);
             }
 
-            for(int j = 0; j < qtd - 1; j++) {
+            for (int j = 0; j < qtd - 1; j++) {
                 close(pipes[j][0]);
                 close(pipes[j][1]);
             }
@@ -226,6 +302,18 @@ int main() {
 
             cadastrar_tarefa(tokens, qtd_tokens);
 
+        } else if (strcmp(tokens[0], "input") == 0) {
+
+            cmd_input(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "output") == 0) {
+
+            cmd_output(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "append") == 0) {
+
+            cmd_append(tokens, qtd_tokens);
+
         } else if (strcmp(tokens[0], "run") == 0) {
 
             if (qtd_tokens < 3) {
@@ -239,7 +327,7 @@ int main() {
                 executar_sequential(&tokens[2], qtd_nomes);
             } else if (strcmp(tokens[1], "parallel") == 0) {
                 executar_paralelo(&tokens[2], qtd_nomes);
-            } else if (strcmp(tokens[1], "pipe") == 0) { 
+            } else if (strcmp(tokens[1], "pipe") == 0) {
                 executar_pipe(&tokens[2], qtd_nomes);
             } else {
                 printf("modo invalido: use sequential, parallel ou pipe\n");
