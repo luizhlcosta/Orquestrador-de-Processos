@@ -24,7 +24,7 @@ background (start/jobs/wait).
 - [x] Redirecionamento de entrada (input)
 - [x] Redirecionamento de saída (output)
 - [x] Redirecionamento de saída em modo append (append)
-- [ ] Diretório de trabalho (workdir)
+- [x] Diretório de trabalho (workdir)
 - [ ] Execução em background (start)
 - [ ] Listagem de jobs (jobs)
 - [ ] Espera de job específico (wait)
