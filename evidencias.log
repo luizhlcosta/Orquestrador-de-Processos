@@ -360,3 +360,35 @@ processflow> exit
 [?2004lexit
 
 Script done on 2026-08-23 00:51:05-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-08-23 11:38:01-03:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="97" LINES="17"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ escho [K[K[K[K[Kcho "=== ETAPA 7: WORK DIR [K ==="
+[?2004l=== ETAPA 7: WORKDIR ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "data[K[K[K[KDAta[K[K[Kata do teste: $( date)"
+[?2004lData do teste: Sun Aug 23 11:38:52 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ t[K[7mtask onde_estou /bin/pw[27m[7md[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ task onde_estou /bin/pwd
+[?2004lCommand 'task' not found, but can be installed with:
+sudo snap install task         # version v3.51.1, or
+sudo apt  install taskwarrior  # version 2.6.2+dfsg-1
+See 'snap info task' for additional versions.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./s[Kprocc[Kesseflow
+[?2004lbash: ./processeflow: No such file or directory
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./process [Kflow
+[?2004lprocessflow> task onde_estou /bin/pwd
+tarefa 'onde_estou' cadastrada
+processflow> run sequential onde_estou
+/mnt/c/Users/luizh/Orquestrador-de-Processos
+processflow> workdir /tmp
+diretorio de trabalho alterado para: /tmp
+processflow> run sequential onde_estou
+/tmp
+processflow> workdir /pasta_que_nao_existe
+erro ao mudar diretorio: No such file or directory
+processflow> run sequential onde_estou
+/tmp
+processflow> exit
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE EA[KTA PA 7 ==="
+[?2004l=== FIM TESTE ETAPA 7 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ECIT[K[K[K[Kexit [K
+[?2004lexit
+
+Script done on 2026-08-23 11:40:20-03:00 [COMMAND_EXIT_CODE="0"]
