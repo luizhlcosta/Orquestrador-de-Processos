@@ -25,9 +25,9 @@ background (start/jobs/wait).
 - [x] Redirecionamento de saída (output)
 - [x] Redirecionamento de saída em modo append (append)
 - [x] Diretório de trabalho (workdir)
-- [ ] Execução em background (start)
-- [ ] Listagem de jobs (jobs)
-- [ ] Espera de job específico (wait)
+- [x] Execução em background (start)
+- [x] Listagem de jobs (jobs)
+- [x] Espera de job específico (wait)
 - [ ] Modo workflow (.pf) com impressão de linha antes de processar
 - [ ] Tratamento de erros (argumentos inválidos, tarefa/programa inexistente, etc.)
 
