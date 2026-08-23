@@ -13,6 +13,8 @@
 #define MAX_ARGS 64
 #define MAX_TAREFAS 64
 
+#define MAX_JOBS 64
+
 typedef struct {
     char nome[MAX_NOME];
     char *argv[MAX_ARGS];
@@ -23,6 +25,17 @@ typedef struct {
 
 Tarefa tarefas[MAX_TAREFAS];
 int total_tarefas = 0;
+
+typedef struct { 
+    int job_id;
+    pid_t pid;
+    char nome_tarefa[MAX_NOME];
+    int status;
+} Job;
+
+Job jobs[MAX_JOBS];
+int total_jobs = 0;
+
 
 void cadastrar_tarefa(char *tokens[], int qtd_tokens) {
     if (qtd_tokens < 3) {
@@ -288,6 +301,114 @@ void cmd_workdir(char *tokens[], int qtd_tokens) {
     printf("diretorio de trabalho alterado para: %s\n", tokens[1]);
 }
 
+void cmd_start(char *tokens[], int qtd_tokens) {
+
+    if (qtd_tokens < 2) {
+        printf("uso: start <tarefa>\n");
+        return;
+    }
+
+    int indice = buscar_tarefa(tokens[1]);
+
+    if (indice == -1) {
+        printf("tarefa nao encontrada: %s\n", tokens[1]);
+        return;
+    }
+
+    pid_t pid = fork();
+
+    if (pid == 0) {
+        
+        if (tarefas[indice].input_file != NULL) {
+            int fd = open(tarefas[indice].input_file, O_RDONLY);
+            if (fd < 0) {
+                perror("erro ao abrir arquivo de entrada");
+                exit(1);
+            }
+            dup2(fd, STDIN_FILENO);
+            close(fd);
+        }
+
+        if (tarefas[indice].output_file != NULL) {
+            int flags;
+            if (tarefas[indice].append == 1) {
+                flags = O_WRONLY | O_CREAT | O_APPEND;
+            } else {
+                flags = O_WRONLY | O_CREAT | O_TRUNC;
+            }
+            int fd = open(tarefas[indice].output_file, flags, 0644);
+            if (fd < 0) {
+                perror("erro ao abrir arquivo de saida");
+                exit(1);
+            }
+            dup2(fd, STDOUT_FILENO);
+            close(fd);
+        }
+
+        execvp(tarefas[indice].argv[0], tarefas[indice].argv);
+        perror("erro ao executar");
+        exit(1);
+
+    } else if (pid > 0) {
+
+        if (total_jobs >= MAX_JOBS) {
+            printf("limite maximo de jobs atingido\n");
+            return;
+        }
+
+        jobs[total_jobs].job_id = total_jobs + 1;
+        jobs[total_jobs].pid = pid;
+        strncpy(jobs[total_jobs].nome_tarefa, tokens[1], MAX_NOME - 1);
+        jobs[total_jobs].nome_tarefa[MAX_NOME - 1] = '\0';
+        jobs[total_jobs].status = 0; // RUNNING
+
+        printf("[%d] %d\n", jobs[total_jobs].job_id, pid);
+
+        total_jobs++;
+
+    } else {
+        perror("erro no fork");
+    }
+}
+
+void cmd_jobs() {
+    for (int i = 0; i < total_jobs; i++) {
+        if (jobs[i].status == 0) {
+            int status;
+            int resultado = waitpid(jobs[i].pid, &status, WNOHANG);
+            if (resultado > 0) {
+                jobs[i].status = 1; // DONE
+            }
+        }
+
+        const char *texto_status = (jobs[i].status == 0) ? "Running" : "Done";
+        printf("[%d] %d %s %s\n", jobs[i].job_id, jobs[i].pid, jobs[i].nome_tarefa, texto_status);
+    }
+}
+
+void cmd_wait(char *tokens[], int qtd_tokens) {
+    if (qtd_tokens < 2) {
+        printf("uso: wait <jobId>\n");
+        return;
+    }
+
+    int job_id = atoi(tokens[1]);
+
+    for (int i = 0; i < total_jobs; i++) {
+        if (jobs[i].job_id == job_id) {
+            if (jobs[i].status == 0) {
+                int status;
+                waitpid(jobs[i].pid, &status, 0);
+                jobs[i].status = 1;
+            }
+            printf("job %d finalizado\n", job_id);
+            return;
+        }
+    }
+
+    printf("job nao encontrado: %d\n", job_id);
+}
+
 
 int main() {
     char entrada[MAX_LINE];
@@ -331,6 +452,18 @@ int main() {
         } else if (strcmp(tokens[0], "workdir") == 0) {
 
             cmd_workdir(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "start") == 0) {
+
+            cmd_start(tokens, qtd_tokens);
+
+        } else if (strcmp(tokens[0], "jobs") == 0) {
+
+            cmd_jobs();
+
+        } else if (strcmp(tokens[0], "wait") == 0) {
+
+            cmd_wait(tokens, qtd_tokens);
 
         } else if (strcmp(tokens[0], "run") == 0) {
 
