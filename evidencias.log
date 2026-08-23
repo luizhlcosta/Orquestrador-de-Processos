@@ -325,3 +325,38 @@ processflow> exit
 [?2004lexit
 
 Script done on 2026-08-22 21:37:05-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-08-23 00:48:48-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="17"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== ETAPA 6: REDI[27m[7mR[27m[7mECIONAMENTO (input/output/append) ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ==="
+[?2004l=== ETAPA 6: REDIRECIONAMENTO (input/output/append) ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "Data do teste: $([27m[7md[27m[7mate)"[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "Data do teste: $(date)"
+[?2004lData do teste: Sun Aug 23 00:49:11 -03 2026
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ make
+[?2004lmake: Nothing to be done for 'all'.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
+[?2004lprocessflow> task escrever /bin/echo linha1
+tarefa 'escrever' cadastrada
+processflow> v output escrever saida.txt
+processflow> run sequential escrever
+processflow> cat saida.txt
+token[0] = cat
+token[1] = saida.txt
+processflow> task escrever2 /bin/echo linha2
+tarefa 'escrever2' cadastrada
+processflow> append escrever2 saida.txt
+processflow> run sequential escrever2
+processflow> cat saida.txt
+token[0] = cat
+token[1] = saida.txt
+processflow> task ordenar /usr/bin/sort
+tarefa 'ordenar' cadastrada
+processflow> input ordenar saida.txt
+processflow> run sequential ordenar
+linha1
+linha2
+processflow> exit
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mecho "=== FIM TESTE ETA[27m[7mP[27m[7mA 6 ==="[27m[A]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ echo "=== FIM TESTE ETAPA 6 ==="
+[?2004l=== FIM TESTE ETAPA 6 ===
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
+[?2004lexit
+
+Script done on 2026-08-23 00:51:05-03:00 [COMMAND_EXIT_CODE="0"]
