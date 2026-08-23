@@ -282,4 +282,46 @@ processflow> run sequentia  l lenta  1 lena ta 2  2
 tarefa 'sequential' nao encontrada
 processflow> run parallel lena ta 1    1 lenta  2
 tarefa 'parallel' nao encontrada
-processflow> [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [7mgcc -Wall -Wextra -o pr[27m[7mo[27m[7mcessflow processflow.c
+Script started on 2026-08-22 20:43:21-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="185" LINES="22"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ task lista [Kr /bn[Kin/li[Ks -l [K
+[?2004l
+Command 'task' not found, but can be installed with:
+sudo snap install task         # version v3.51.1, or
+sudo apt  install taskwarrior  # version 2.6.2+dfsg-1
+See 'snap info task' for additional versions.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ .;pro[K[K[K[K/processe[Kflow
+[?2004l
+processflow> te  tas sk listar /bin/ls -l
+tarefa 'listar' cadastrada
+processflow> tak sk lsita    istar -        ordenar /usr  /bir   n  /sor  t
+tarefa 'ordenar' cadastrada
+processflow> run listar        pipe listar on rnde   dena  r contar                              task contar /usr/bin  /  wc -l
+tarefa 'contar' cadastrada
+processflow> run pip  e listar ordenar contar
+^C
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
+[?2004l
+exit
+
+Script done on 2026-08-22 20:51:06-03:00 [COMMAND_EXIT_CODE="130"]
+Script started on 2026-08-22 20:52:42-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="49" LINES="9"]
+Script started on 2026-08-22 21:35:16-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="97" LINES="17"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./process
+[?2004lbash: ./process: No such file or directory
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
+[?2004lprocessflow> task listar /bin/ls
+tarefa 'listar' cadastrada
+processflow> task ordenar /usr  /bin  /sort  
+tarefa 'ordenar' cadastrada
+processflow> contar  /usr/bin/wc-l^[[D^[[D           -l
+token[0] = contar/usr/bin/wc
+token[1] = -l
+processflow> task contar /usr/bin/wc -l
+tarefa 'contar' cadastrada
+processflow> run pipe listar ordenar ca ontar  
+5
+processflow> exit 
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
+[?2004lexit
+
+Script done on 2026-08-22 21:37:05-03:00 [COMMAND_EXIT_CODE="0"]
