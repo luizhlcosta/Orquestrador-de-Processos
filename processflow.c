@@ -146,6 +146,58 @@ void executar_paralelo(char *nomes_tarefas[], int qtd) {
     }
 }
 
+void executar_pipe(char *nomes_tarefas[], int qtd) {
+    int pipes[qtd -1][2];
+
+    for(int i = 0; i < qtd - 1; i++) {
+        pipe(pipes[i]);
+    }
+    pid_t pids[qtd];
+
+    for(int i = 0; i < qtd; i++) {
+        int indice = buscar_tarefa(nomes_tarefas[i]);
+        if (indice == -1) {
+            perror("erro");
+            continue;
+        }
+        pid_t pid = fork();
+
+        if (pid == 0) {
+            if (i == 0) {
+                dup2(pipes[i][1], STDOUT_FILENO);
+            } else if (i == qtd - 1) {
+                dup2(pipes[i-1][0], STDIN_FILENO);
+            } else {
+                dup2(pipes[i-1][0], STDIN_FILENO);
+                dup2(pipes[i][1], STDOUT_FILENO);
+            }
+
+            for(int j = 0; j < qtd - 1; j++) {
+                close(pipes[j][0]);
+                close(pipes[j][1]);
+            }
+
+            execvp(tarefas[indice].argv[0], tarefas[indice].argv);
+            perror("erro ao executar");
+            exit(1);
+        } else if (pid > 0) {
+            pids[i] = pid;
+        } else {
+            perror("erro no fork");
+        }
+    }
+
+    for (int i = 0; i < qtd - 1; i++) {
+        close(pipes[i][0]);
+        close(pipes[i][1]);
+    }
+
+    for (int i = 0; i < qtd; i++) {
+        int status;
+        waitpid(pids[i], &status, 0);
+    }
+}
+
 
 int main() {
     char entrada[MAX_LINE];
@@ -177,7 +229,7 @@ int main() {
         } else if (strcmp(tokens[0], "run") == 0) {
 
             if (qtd_tokens < 3) {
-                printf("uso: run <sequential|parallel> <tarefas...>\n");
+                printf("uso: run <sequential|parallel|pipe> <tarefas...>\n");
                 continue;
             }
 
@@ -187,8 +239,10 @@ int main() {
                 executar_sequential(&tokens[2], qtd_nomes);
             } else if (strcmp(tokens[1], "parallel") == 0) {
                 executar_paralelo(&tokens[2], qtd_nomes);
+            } else if (strcmp(tokens[1], "pipe") == 0) { 
+                executar_pipe(&tokens[2], qtd_nomes);
             } else {
-                printf("modo invalido: use sequential ou parallel\n");
+                printf("modo invalido: use sequential, parallel ou pipe\n");
             }
 
         } else if (strcmp(tokens[0], "exit") == 0) {
