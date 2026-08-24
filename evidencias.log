@@ -439,3 +439,24 @@ processflow> eixt   xit
 [?2004lexit
 
 Script done on 2026-08-23 17:26:56-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-08-24 14:59:05-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="14"]
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ make
+[?2004lmake: Nothing to be done for 'all'.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./processflow
+[?2004lprocessflow> tas   [?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ task ola /bin/echo ola_mundo
+[?2004lCommand 'task' not found, but can be installed with:
+sudo snap install task         # version v3.51.1, or
+sudo apt  install taskwarrior  # version 2.6.2+dfsg-1
+See 'snap info task' for additional versions.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ [K]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ make
+[?2004lmake: Nothing to be done for 'all'.
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./po[Kro[K]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./pro[K]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ ./pro[K[Krocessflow teste.pf
+[?2004ltask ola /bin/echo ola_mundo
+tarefa 'ola' cadastrada
+run ola
+tarefa nao encontrada: ola
+exit
+[?2004h]0;luizhlcosta@DESKTOP-233HMBM: /mnt/c/Users/luizh/Orquestrador-de-Processos[01;32mluizhlcosta@DESKTOP-233HMBM[00m:[01;34m/mnt/c/Users/luizh/Orquestrador-de-Processos[00m$ exit
+[?2004lexit
+
+Script done on 2026-08-24 15:01:44-03:00 [COMMAND_EXIT_CODE="0"]
