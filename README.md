@@ -28,7 +28,7 @@ background (start/jobs/wait).
 - [x] Execução em background (start)
 - [x] Listagem de jobs (jobs)
 - [x] Espera de job específico (wait)
-- [ ] Modo workflow (.pf) com impressão de linha antes de processar
+- [x] Modo workflow (.pf) com impressão de linha antes de processar
 - [ ] Tratamento de erros (argumentos inválidos, tarefa/programa inexistente, etc.)
 
 ## Ambiente de desenvolvimento
