@@ -410,18 +410,40 @@ void cmd_wait(char *tokens[], int qtd_tokens) {
 }
 
 
-int main() {
+int main(int argc, char *argv[]) {
     char entrada[MAX_LINE];
     char *tokens[MAX_TOKENS];
 
-    while (1) {
-        printf("processflow> ");
+    FILE *entrada_stream;
 
-        if (fgets(entrada, sizeof(entrada), stdin) == NULL) {
+    if (argc == 1) {
+        entrada_stream = stdin;
+    } else if (argc == 2) {
+        entrada_stream = fopen(argv[1], "r");
+        if (entrada_stream == NULL) {
+            printf("erro: nao foi possivel abrir o arquivo workflow: %s\n", argv[1]);
+            return 1;
+        }
+    } else {
+        printf("uso: %s [workflowFile]\n", argv[0]);
+        return 1;
+    }
+
+    while (1) {
+        
+        if (entrada_stream == stdin) {
+            printf("processflow> ");
+        } 
+        
+        if (fgets(entrada, sizeof(entrada), entrada_stream) == NULL) {
             break;
         }
 
         entrada[strcspn(entrada, "\n")] = '\0';
+
+        if (entrada_stream != stdin) {
+            printf("%s\n", entrada);
+        }
 
         if (linha_em_branco(entrada)) {
             continue;
@@ -467,7 +489,7 @@ int main() {
 
         } else if (strcmp(tokens[0], "run") == 0) {
 
-            if (qtd_tokens < 3) {
+            if (qtd_tokens < 2) {
                 printf("uso: run <sequential|parallel|pipe> <tarefas...>\n");
                 continue;
             }
@@ -480,8 +502,16 @@ int main() {
                 executar_paralelo(&tokens[2], qtd_nomes);
             } else if (strcmp(tokens[1], "pipe") == 0) {
                 executar_pipe(&tokens[2], qtd_nomes);
+            } else if (qtd_tokens == 2) {
+                // run <nome> direto, sem modo
+                int indice = buscar_tarefa(tokens[1]);
+                if (indice == -1) {
+                    printf("tarefa nao encontrada: %s\n", tokens[1]);
+                } else {
+                    executar_tarefa(indice);
+                }
             } else {
-                printf("modo invalido: use sequential, parallel ou pipe\n");
+                printf("uso: run <sequential|parallel|pipe> <tarefas...>\n");
             }
 
         } else if (strcmp(tokens[0], "exit") == 0) {
@@ -494,6 +524,10 @@ int main() {
                 printf("token[%d] = %s\n", i, tokens[i]);
             }
         }
+    }
+
+    if (entrada_stream != stdin) {
+        fclose(entrada_stream);
     }
 
     return 0;
