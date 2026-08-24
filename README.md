@@ -29,7 +29,7 @@ background (start/jobs/wait).
 - [x] Listagem de jobs (jobs)
 - [x] Espera de job específico (wait)
 - [x] Modo workflow (.pf) com impressão de linha antes de processar
-- [ ] Tratamento de erros (argumentos inválidos, tarefa/programa inexistente, etc.)
+- [x] Tratamento de erros (argumentos inválidos, tarefa/programa inexistente, etc.)
 
 ## Ambiente de desenvolvimento
 Este projeto foi desenvolvido e testado em WSL (Windows Subsystem for Linux),
@@ -49,13 +49,7 @@ Modo interativo (sem argumentos):
 
 Modo workflow (com arquivo .pf):
 
-    ./processflow caminho/para/arquivo.pf
-
-## Como testar
-
-    make test
-
-Executa um teste básico que verifica se o programa inicia e encerra corretamente.
+    ./processflow nome_do_arquivo.pf 
 
 ## Como limpar arquivos compilados
 
